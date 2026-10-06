@@ -1,6 +1,8 @@
 cc_binary_host {
     name: "unifdef",
     srcs: ["scripts/unifdef.c"],
+    // unifdef.c has a variable named constexpr, a keyword since C23
+    c_std: "gnu17",
     sanitize: {
         never: true,
     },
